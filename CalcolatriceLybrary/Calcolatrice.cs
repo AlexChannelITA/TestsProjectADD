@@ -4,10 +4,21 @@ namespace CalcolatriceLybrary
 {
     public class Calcolatrice
     {
-        public  int Somma(int a, int b, int c)
+        public  int Somma(int [] addendi)
         {
-            //throw new NotImplementedException();
-            return a + b + c;
+            if (addendi == null || addendi.Length == 0)
+            {
+                throw new ArgumentNullException();
+            }
+
+            int sum = 0;
+
+            foreach (int x in addendi)
+            {
+                sum += x;
+            }
+
+            return sum;
         }
     }
 }
