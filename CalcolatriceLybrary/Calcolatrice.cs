@@ -6,7 +6,8 @@ namespace CalcolatriceLybrary
     {
         public  int Somma(int a, int b)
         {
-            return a+b;
+            //throw new NotImplementedException();
+            return a + b;
         }
     }
 }
