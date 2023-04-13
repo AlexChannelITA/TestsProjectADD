@@ -11,10 +11,11 @@ namespace TestCalcolatrice
         {
             int add1 = 2;
             int add2 = 3;
-            int epected = 5;
+            int add3 = 4;
+            int epected = 9;
 
             var calc = new Calcolatrice();
-            int result = calc.Somma(add1, add2);
+            int result = calc.Somma(add1, add2, add3);
 
             Assert.AreEqual(epected, result);
         }
