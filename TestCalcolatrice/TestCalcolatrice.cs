@@ -1,10 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CalcolatriceLybrary;
+using System;
 
 namespace TestCalcolatrice
 {
     [TestClass]
-    public class UnitTest1olatrice
+    public class UnitTestCalcolatrice
     {
         [TestMethod]
         public void TestSomma()
@@ -16,6 +17,26 @@ namespace TestCalcolatrice
             int result = calc.Somma(addendi);
 
             Assert.AreEqual(epected, result);
+        }
+
+        public void TestSommaNull()
+        {
+            int[] addendi = null;
+
+            Exception expected = null;
+
+            Calcolatrice sum = new Calcolatrice();
+
+            try
+            {
+                sum.Somma(addendi);
+            }
+            catch
+            {
+                expected = new ArgumentException();
+            }
+
+            Assert.IsNotNull(expected);
         }
     }
 }
