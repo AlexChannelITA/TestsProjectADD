@@ -19,7 +19,22 @@ namespace TestCalcolatrice
             Assert.AreEqual(epected, result);
         }
 
-        public void TestSommaNull()
+        [TestMethod]
+        [DataRow(new int[] { 4, 4, 0 }, 8)]
+        [DataRow(new int[] { 0, 0, 0 }, 0)]
+        [DataRow(new int[] { -4, 4, 0 }, 0)]
+        [DataRow(new int[] { 1, 4, 0 }, 5)]
+
+        public void TestMethodDataRow(int[] addendi, int expected)
+        {
+            Calcolatrice sum = new Calcolatrice();
+
+            int result = sum.Somma(addendi);
+
+            Assert.AreEqual(expected, result);
+
+        }
+        /*public void TestSommaNull()
         {
             int[] addendi = null;
 
@@ -36,7 +51,7 @@ namespace TestCalcolatrice
                 expected = new ArgumentException();
             }
 
-            Assert.IsNotNull(expected);
+            Assert.IsNotNull(expected);*/
         }
     }
 }
